@@ -23,8 +23,8 @@ const Leftbody = () => {
                 <div className='mb-3'>Main Menu</div>
                 <div className=' h-full flex flex-col justify-around'>
                     <Link to='/main' onClick={()=>dispatch(setpath(''))}><Dash/></Link>
-                    <Link  to='/main/exams' onClick={()=>dispatch(setpath('exams'))}><Exams/></Link>
-                    <div ><Student/></div>
+                    <Link  to='/main/exams'><Exams/></Link>
+                    <Link to='/main/students' ><Student/></Link>
                     <div ><Course/></div>
                     <div ><Admin/></div>
                     <div ><Web/></div>

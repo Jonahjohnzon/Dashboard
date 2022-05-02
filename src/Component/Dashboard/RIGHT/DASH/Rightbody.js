@@ -5,10 +5,10 @@ const Rightbody = ({rightinfo}) => {
     <div className=' h-full w-[22vw] fixed right-0 top-0'>
       <div className='w-full h-16 flex items-end'>
     <div className='flex w-2/6 justify-around'>
-                <div className='p-4 bg-lblue rounded-md'>
+                <div className='px-4 py-3 bg-lblue rounded-md shadow-md hover:shadow-sm cursor-pointer'>
                 <img src='/IMAGES/alarm.svg' />
                 </div >
-                <div className=' p-4   bg-lblue rounded-md'>
+                <div className=' px-4  py-3  bg-lblue rounded-md shadow-md hover:shadow-sm cursor-pointer'>
                 <img src='/IMAGES/setting.svg'/>
                 </div>
              </div>
