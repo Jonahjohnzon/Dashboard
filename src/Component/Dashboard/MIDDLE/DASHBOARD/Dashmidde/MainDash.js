@@ -1,28 +1,32 @@
 import React from 'react'
 import MiddleActive from './MiddleActive'
-import Latestbody from './Latestbody'
-import data from './Data'
+import Latestbody from '../../../Latestbody'
+import data from '../../../Data'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
-const Middle = () => {
-  const Data=data.map((data)=>{
-    return(
-      <>
-       <Latestbody Data={data} />
-      </>
-    )
-  })
+const MainDash = () => {
+    const Data=data.map((data)=>{
+        return(
+          <>
+           <Latestbody Data={data} />
+          </>
+        )
+      })
+      const [totalstudent,settotalstudent]=useState(0)
+      const [totalcourse,settotalcourse]=useState(0)
+      useEffect(()=>{
+        if(totalstudent<=123569){
+          settotalstudent(totalstudent+200)
+      }
+  },[totalstudent])
+  useEffect(()=>{
+    if(totalcourse<=124){
+      settotalcourse(totalcourse+1)
+    }
+  },[totalcourse])
   return (
-    <div className='w-full h-full'>
-    <div className='w-full h-[10%] flex items-end justify-end '>
-            <input type='text' className='w-3/6 h-3/6 bg-lgray rounded-md bg-no-repeat bg-left pl-12 mb-3 ' placeholder='Search' style={{backgroundImage:'url(/IMAGES/search.png)',backgroundPositionX:15}}/> 
-    </div>
-    <div className='h-[90%] w-full flex items-center '>
-      <div className='h-[100%] w-full bg-lblue flex justify-center items-end'>
-        <div className='w-[90%] h-[95%] flex items-end'>
-        <div className='w-full h-[10%] fixed top-20 flex items-center '>
-        <div className=' font-bold text-3xl'>Dashboard</div>
-        </div>
-        <div className='w-full h-[93%] overflow-y-scroll scrollbar-track-dgray  scrollbar-thin scrollbar-thumb-bluebutton '>
+    <div className='w-full h-[93%] overflow-y-scroll scrollbar-hide '>
         <div className='w-full h-[20%] flex justify-between items-start'>
           <div className='w-[49%] h-5/6 bg-white rounded-md flex shadow-md'>
             <div className='w-[45%] h-full flex justify-center items-center'>
@@ -31,9 +35,9 @@ const Middle = () => {
               </div>
             </div>
             <div className='w-full h-full flex flex-col justify-between'>
-              <div className='h-[60%] flex flex-col justify-around border-b-[1px] border-dgray'>
+              <div className='h-[60%] flex flex-col justify-around border-b-[1px] border-lblue'>
                 <div>Total Registered Students</div>
-                <div>123,569</div>
+                <div>{totalstudent}</div>
               </div>
               <div className=' font-medium text-xs h-[30%]'>1526 registered in the last 7 days</div>
             </div>
@@ -45,9 +49,9 @@ const Middle = () => {
               </div>
             </div>
             <div className='w-full h-full flex flex-col justify-between'>
-              <div className='h-[60%] flex flex-col justify-around border-b-[1px] border-dgray'>
+              <div className='h-[60%] flex flex-col justify-around border-b-[1px] border-lblue'>
                 <div>Total Courses Registered</div>
-                <div>125</div>
+                <div>{totalcourse}</div>
               </div>
               <div className=' font-medium text-xs h-[30%]'>15 registered in the last 7 days</div>
             </div>
@@ -85,11 +89,7 @@ const Middle = () => {
         </div>
         </div>
         </div>
-        </div>
-      </div>
-    </div>
-    </div>
   )
 }
 
-export default Middle
+export default MainDash

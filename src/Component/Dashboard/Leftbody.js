@@ -7,8 +7,12 @@ import Web from './Icon/Web'
 import News from './Icon/News'
 import Result from './Icon/Result'
 import Course from './Icon/Course'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import {setpath} from '../../Store/CreateSlice'
 
-const Leftbody = () => {
+const Leftbody = () => { 
+  const dispatch=useDispatch();
   return (
     <div className='h-full flex flex-col  justify-between  fixed left-0 top-0 w-[22vw] '>
             <div className='w-full h-1/6 mt-3 ml-10'>
@@ -18,8 +22,8 @@ const Leftbody = () => {
                 <div className='h-4/6'>
                 <div className='mb-3'>Main Menu</div>
                 <div className=' h-full flex flex-col justify-around'>
-                    <div ><Dash/></div>
-                    <div ><Exams/></div>
+                    <Link to='/main' onClick={()=>dispatch(setpath(''))}><Dash/></Link>
+                    <Link  to='/main/exams' onClick={()=>dispatch(setpath('exams'))}><Exams/></Link>
                     <div ><Student/></div>
                     <div ><Course/></div>
                     <div ><Admin/></div>

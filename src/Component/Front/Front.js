@@ -7,7 +7,7 @@ const Front = () => {
     <Router>
         <Routes>
        <Route exact path="/" element={ <Login/>}/>
-       <Route exact path="/main" element={ <Frontdash/>}/>
+       <Route exact path="/main/*" element={ <Frontdash/>}/>
         </Routes>
     </Router>
   )
